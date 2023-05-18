@@ -1,3 +1,5 @@
+{%load static%}
+
 <!doctype html>
 <html lang="ja">
   <head>
@@ -10,6 +12,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 
+    <!--カレンダー-->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
+    <script src="{% static 'js/tag.js' %}"></script>
+    <script>
+      /*
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          events: [
+            {
+              
+              title: 'テスト',
+              start: '2023-05-21',
+              color: 'red'
+            }
+          ]
+    
+          
+        });
+        calendar.render();
+      });
+      */
+      
+    </script>
+
+
+   
+
+   
     <style>
       body{
         padding-top:20px;
@@ -20,6 +52,7 @@
 
   </head>
   <body>
+
     <div class="container">
       <div class="w-75 mx-auto">
         <div class="shadow-sm p-3 mb-5 bg-white rounded">
@@ -30,9 +63,16 @@
         {%block content%}
         {%endblock content%}
       </div>
+      
+      <!--カレンダーを表示-->
+      <div id="calendar"  ></div>
     </div>
   
 
     
   </body>
+
+   
+  
+
 </html>
